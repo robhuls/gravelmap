@@ -33,4 +33,9 @@ WORKDIR /
 RUN rm /noto -R
 RUN rm -rf /var/lib/apt/lists/*
 # Add gen-tiles
-COPY gen-tiles.py /
+RUN wget https://svn.openstreetmap.org/applications/rendering/mapnik/generate_image.py
+RUN wget https://svn.openstreetmap.org/applications/rendering/mapnik/generate_tiles.py
+# Get the shapefiles
+WORKDIR /openstreetmap-carto
+RUN ./scripts/get-shapefiles.py
+# https://github.com/nomadenorg/osmtilegen/

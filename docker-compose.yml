@@ -11,5 +11,3 @@ services:
   renderer:
     build: renderer
     image: g_renderer
-
-
