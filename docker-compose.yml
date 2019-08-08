@@ -1,0 +1,15 @@
+version: "2"
+services:
+  db:
+    build: postgres_postgis
+    image: g_database
+    restart: always
+    environment:
+      POSTGRES_USER: gisuser
+      POSTGRES_PASSWORD: jhkf743d
+      POSTGRES_DB: gis
+  renderer:
+    build: renderer
+    image: g_renderer
+
+

@@ -1,7 +1,7 @@
 FROM postgres:10
 MAINTAINER Rob Huls (robhuls@gmail.com)
 # Add postgis
-RUN apt-get update && apt-get upgrade -y && apt-get install postgresql-10-postgis-2.5 postgresql-10-postgis-2.5-scripts -y
+RUN apt-get update && apt-get upgrade -y && apt-get install postgresql-10-postgis-2.5 postgresql-10-postgis-2.5-scripts sudo -y --no-install-recommends && rm -rf /var/lib/apt/lists/*
 # Update ubuntu and install wget and sudo
 # RUN apt-get update && apt-get upgrade -y && apt-get install wget sudo -y
 # Install postgres
